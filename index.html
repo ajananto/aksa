@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prolog & Direktori Dokumen - Aksa Digital Group</title>
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --secondary-color: #2563eb;
+            --accent-color: #0d9488;
+            --bg-color: #f1f5f9;
+            --card-bg: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --border-color: #e2e8f0;
+            --hover-bg: #eff6ff;
+            --accent-light: #f0fdf4;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-color);
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 45px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+        }
+
+        header {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        .brand-tag {
+            font-size: 10pt;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            font-size: 24pt;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 12px;
+        }
+
+        header .subtitle {
+            color: var(--text-secondary);
+            font-size: 11pt;
+            font-weight: 400;
+        }
+
+        .prolog-box {
+            background-color: #f8fafc;
+            border-left: 4px solid var(--secondary-color);
+            padding: 24px;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 35px;
+        }
+
+        .prolog-box h2 {
+            font-size: 14pt;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .prolog-box p {
+            font-size: 10.5pt;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .prolog-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .pill-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .pill-item {
+            font-size: 10pt;
+            color: var(--text-primary);
+            background: #ffffff;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 14pt;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .file-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .file-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 24px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .file-card:hover {
+            border-color: var(--secondary-color);
+            background-color: var(--hover-bg);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+        }
+
+        .file-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .file-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background-color: #dbeafe;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 11pt;
+            flex-shrink: 0;
+        }
+
+        .file-details h3 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 4px;
+        }
+
+        .file-details p {
+            font-size: 9pt;
+            color: var(--text-secondary);
+        }
+
+        .file-sub-grid {
+            margin-left: 28px;
+            padding-left: 20px;
+            border-left: 2px dashed var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .file-sub-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .file-sub-card:hover {
+            border-color: var(--accent-color);
+            background-color: #f0fdf4;
+            transform: translateY(-1px);
+        }
+
+        .file-sub-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            background-color: #ccfbf1;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 9.5pt;
+            flex-shrink: 0;
+        }
+
+        .action-btn {
+            font-size: 9.5pt;
+            font-weight: 600;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .action-btn-sub {
+            color: var(--accent-color);
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 9pt;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="brand-tag">Aksa Digital Group</div>
+        <h1>Pengembangan & Perbaikan Sistem Kerja</h1>
+        <div class="subtitle">Prolog Dokumen Strategis & Akses Berkas Google Drive</div>
+    </header>
+
+    <!-- PROLOG SECTION -->
+    <div class="prolog-box">
+        <h2>Prolog Strategis</h2>
+        <p>Dokumen-dokumen ini dirancang sebagai panduan strategis dan operasional dalam menyelaraskan tata kelola internal serta ekspansi lini bisnis <strong>Aksa Digital Group</strong>. Pembahasan terbagi ke dalam dua pilar utama:</p>
+        
+        <div class="pill-list">
+            <div class="pill-item">
+                <strong>1. Transformasi Tata Kelola & Operasional IT:</strong> Standardisasi pengawasan proyek, produktivitas SDM, serta penyusunan alur analisis dan dokumentasi proyek (BRD hingga Blueprint & Maintenance) untuk menciptakan eksekusi yang terukur dan efisien.
+            </div>
+            <div class="pill-item">
+                <strong>2. Roadmap Pertumbuhan Bisnis (Growth Engine):</strong> Strategi akselerasi omzet melalui sinergi antara Agency Digital, Media Online, dan 5 Pilar IT Services berbasis <em>recurring revenue</em>—termasuk penyediaan talenta IT, edtech kesiapan kerja (TalentBridge), sistem transaksi <em>closed-loop</em> sekolah/pesantren, serta perangkat lunak akuntansi-pajak berstandar <em>Coretax</em>.
+            </div>
+        </div>
+    </div>
+
+    <!-- FILES DIRECTORY -->
+    <div class="section-title">Direktori Berkas Dokumen</div>
+    <div class="file-grid">
+
+        <!-- FILE 1 -->
+        <a href="https://drive.google.com/file/d/10SSlALqtddVAky-GMzLiDX1DGorVwvwq/view?usp=sharing" target="_blank" class="file-card">
+            <div class="file-info">
+                <div class="file-icon">01</div>
+                <div class="file-details">
+                    <h3>Sistem Monitoring Proyek dan SDM</h3>
+                    <p>Perencanaan Roadmap Sistem Monitoring Proyek IT & Individual Tracker</p>
+                </div>
+            </div>
+            <div class="action-btn">Buka Berkas &rarr;</div>
+        </a>
+
+        <!-- FILE 2 -->
+        <a href="https://drive.google.com/file/d/1QxcV8FydadvXYnEXfVpEXXmGnf82duDV/view?usp=sharing" target="_blank" class="file-card">
+            <div class="file-info">
+                <div class="file-icon">02</div>
+                <div class="file-details">
+                    <h3>Arus Kerja Proyek</h3>
+                    <p>Standardisasi Penanganan Proyek IT (BRD, Blueprint, Backtracking, & Maintenance)</p>
+                </div>
+            </div>
+            <div class="action-btn">Buka Berkas &rarr;</div>
+        </a>
+
+        <!-- FILE 3 MAIN -->
+        <a href="https://drive.google.com/file/d/1GdR0yK_x-ciEmUod2s3L5K49rW-YoZZA/view?usp=sharing" target="_blank" class="file-card">
+            <div class="file-info">
+                <div class="file-icon">03</div>
+                <div class="file-details">
+                    <h3>Omzet Growth</h3>
+                    <p>Roadmap Omzet Growth Aksa Digital Group & Sinergi 3 Pilar Bisnis</p>
+                </div>
+            </div>
+            <div class="action-btn">Buka Berkas &rarr;</div>
+        </a>
+
+        <!-- SUB FILES FOR 3 -->
+        <div class="file-sub-grid">
+
+            <a href="https://drive.google.com/file/d/1cq_jCNw23JbhPQMxYo61U-PtH1AUrHHi/view?usp=sharing" target="_blank" class="file-sub-card">
+                <div class="file-info">
+                    <div class="file-sub-icon">3a</div>
+                    <div class="file-details">
+                        <h3>Managed Talent and Services</h3>
+                        <p>Pitch Deck IT Talent Agency & Vetted Talent Network</p>
+                    </div>
+                </div>
+                <div class="action-btn action-btn-sub">Buka Berkas &rarr;</div>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1ejWeWKe2UNksx1OOXgI68y516Of7fH3K/view?usp=drive_link" target="_blank" class="file-sub-card">
+                <div class="file-info">
+                    <div class="file-sub-icon">3b</div>
+                    <div class="file-details">
+                        <h3>TalentBridge</h3>
+                        <p>Pitch Deck TalentBridge (Investasi Leher Ke Atas & Sertifikasi BNSP)</p>
+                    </div>
+                </div>
+                <div class="action-btn action-btn-sub">Buka Berkas &rarr;</div>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1PQy5DIrZHFUzyqWFMVtp_fXvS5PzZYE2/view?usp=drive_link" target="_blank" class="file-sub-card">
+                <div class="file-info">
+                    <div class="file-sub-icon">3c</div>
+                    <div class="file-details">
+                        <h3>Cashless System untuk Sekolah dan Pondok</h3>
+                        <p>Cashless School SaaS Pitch Deck & Ekosistem Closed-Loop</p>
+                    </div>
+                </div>
+                <div class="action-btn action-btn-sub">Buka Berkas &rarr;</div>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1-X2p3v2yNPB_-ZeVvRh8XrWAk6xXbjIq/view?usp=drive_link" target="_blank" class="file-sub-card">
+                <div class="file-info">
+                    <div class="file-sub-icon">3d</div>
+                    <div class="file-details">
+                        <h3>Sistem Akuntansi Pemberkasan Pajak</h3>
+                        <p>Pitch Deck Aplikasi Akuntansi Pajak & Mitigasi SP2DK Coretax</p>
+                    </div>
+                </div>
+                <div class="action-btn action-btn-sub">Buka Berkas &rarr;</div>
+            </a>
+
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Aksa Digital Group. All Rights Reserved.
+    </footer>
+</div>
+
+</body>
+</html>
