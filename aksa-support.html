@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsitektur Ekosistem Sistem LENTERA - PT Aksa Digital Group</title>
+    <style>
+        :root {
+            --primary: #1E3A8A;
+            --primary-light: #3B82F6;
+            --accent: #0D9488;
+            --bg: #F8FAFC;
+            --surface: #FFFFFF;
+            --text-main: #0F172A;
+            --text-muted: #475569;
+            --border: #E2E8F0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 32px;
+            padding: 24px;
+            background: var(--surface);
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+            justify-content: center;
+        }
+
+        .pill-btn {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 10px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .pill-btn:hover {
+            border-color: var(--primary-light);
+            color: var(--primary-light);
+        }
+
+        .pill-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .content-card {
+            display: none;
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .content-card.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-title {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .badge {
+            background: var(--accent);
+            color: white;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            vertical-align: middle;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .sub-box {
+            background: #F1F5F9;
+            padding: 16px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-light);
+        }
+
+        .sub-box h4 {
+            color: var(--primary);
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+
+        .sub-box p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        li {
+            margin-bottom: 6px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .expert-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 16px;
+        }
+
+        .expert-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            background: #FAFAFA;
+        }
+
+        .expert-card h4 {
+            color: var(--accent);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Ekosistem Arsitektur Sistem LENTERA</h1>
+        <p class="subtitle">Kolaborasi Strategis PT Aksa Digital Group & Rifka Annisa WCC</p>
+    </header>
+
+    <div class="nav-pills">
+        <button class="pill-btn active" onclick="showTab(0)">1. Data Analysis</button>
+        <button class="pill-btn" onclick="showTab(1)">2. SME & Tech Experts</button>
+        <button class="pill-btn" onclick="showTab(2)">3. Keamanan Data</button>
+        <button class="pill-btn" onclick="showTab(3)">4. IoT & AI Roadmap</button>
+        <button class="pill-btn" onclick="showTab(4)">5. Change Management</button>
+    </div>
+
+    <!-- Tab 1 -->
+    <div class="content-card active">
+        <h2 class="card-title">1. Data Analysis (Analisis Data & Dashboard Keputusan)</h2>
+        <p>LENTERA merubah data mentah monitoring manual menjadi aset strategis untuk advokasi kebijakan pemenuhan hak Anak yang Berhadapan dengan Hukum (ABH).</p>
+        
+        <div class="grid-2">
+            <div class="sub-box">
+                <h4>Centralized Database & Automated Reporting</h4>
+                <p>Mengonsolidasikan data uji coba dari Aceh, NTT, dan DIY secara real-time tanpa proses rekapitulasi manual yang lambat.</p>
+            </div>
+            <div class="sub-box">
+                <h4>Interactive Dashboard & Filter GEDSI</h4>
+                <p>Visualisasi situasi ABH yang dilengkapi filter GEDSI (jenis kelamin, usia, disabilitas, geografi) untuk mendeteksi disparitas layanan.</p>
+            </div>
+        </div>
+        <div class="sub-box" style="margin-top: 16px;">
+            <h4>Evidence-Based Policy Input</h4>
+            <p>Output analisis digunakan langsung oleh tim ahli Rifka Annisa dan KPAI untuk penyusunan Laporan Monitoring Nasional dan rekomendasi kebijakan kementerian.</p>
+        </div>
+    </div>
+
+    <!-- Tab 2 -->
+    <div class="content-card">
+        <h2 class="card-title">2. SME & Tech Experts Collaboration</h2>
+        <p>Penggabungan keahlian substantif (Subject Matter Experts) dan kapabilitas teknis pengembang untuk menjamin sistem yang relevan dan aplikatif.</p>
+        
+        <div class="expert-section">
+            <div class="expert-card">
+                <h4>Subject Matter Experts (Rifka Annisa WCC)</h4>
+                <ul>
+                    <li><strong>Amalia Rizkyarini:</strong> Psikolog & Manajemen Kasus</li>
+                    <li><strong>Saeroni & Indiah Wahyu Andari:</strong> Metodologi M&E, GEDSI, & Perlindungan Anak</li>
+                    <li><strong>Dewan Penasihat:</strong> Dr. Nurul Kodriati & Suharti, M.A.</li>
+                </ul>
+            </div>
+            <div class="expert-card">
+                <h4>Tech Experts (PT Aksa Digital Group)</h4>
+                <ul>
+                    <li><strong>Eko Riyadi, S.Kom.:</strong> IT Coordinator / Sistem Analis</li>
+                    <li><strong>Fahmi Dzikrullah, M.Eng.:</strong> IT Data Analyst</li>
+                    <li><strong>Ardi Baskoro, S.Kom.:</strong> IT Developer</li>
+                    <li><strong>Jevi Ariyanti, S.Kom.:</strong> IT QA & Technical Writer</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab 3 -->
+    <div class="content-card">
+        <h2 class="card-title">3. Data Governance & Security</h2>
+        <p>Perlindungan ketat terhadap data sensitif anak dan ABH dengan standar tata kelola data modern.</p>
+        
+        <div class="grid-2">
+            <div class="sub-box">
+                <h4>Data Minimization & Anonymization</h4>
+                <p>Tidak menyimpan Informasi Identitas Pribadi (PII). Menggunakan protokol pseudonimisasi untuk mencegah pelacakan identitas korban.</p>
+            </div>
+            <div class="sub-box">
+                <h4>Role-Based Access Control (RBAC)</h4>
+                <p>Hak akses berjenjang. Petugas KPAD hanya dapat mengakses wilayah kerja lokal, sementara administrator KPAI Pusat memegang akses agregasi nasional.</p>
+            </div>
+        </div>
+        <div class="sub-box" style="margin-top: 16px;">
+            <h4>Secure Infrastructure</h4>
+            <p>Enkripsi data saat transit (SSL/TLS) dan dokumentasi audit trail terintegrasi untuk melacak riwayat modifikasi data.</p>
+        </div>
+    </div>
+
+    <!-- Tab 4 -->
+    <div class="content-card">
+        <h2 class="card-title">4. Internet of Things (IoT) & Artificial Intelligence (AI)</h2>
+        <p>Penerapan teknologi berimbang yang memprioritaskan kebutuhan lapangan serta peta jalan jangka panjang.</p>
+        
+        <div class="grid-2">
+            <div class="sub-box">
+                <h4>AI Roadmap (Jangka Panjang) <span class="badge">Future</span></h4>
+                <p>Rencana pengembangan <em>predictive analytics</em> untuk pemetaan risiko wilayah serta klasifikasi otomatis kategori pengaduan menggunakan NLP.</p>
+            </div>
+            <div class="sub-box">
+                <h4>Optimasi Lapangan & Offline Entry <span class="badge">Saat Ini</span></h4>
+                <p>Fitur entri data offline dan <em>low-bandwidth optimization</em> bagi petugas KPAD di daerah terpencil dengan sinkronisasi otomatis saat terhubung sinyal.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab 5 -->
+    <div class="content-card">
+        <h2 class="card-title">5. Change Management & Adopsi</h2>
+        <p>Strategi pendampingan keberlanjutan untuk memastikan adopsi teknologi yang optimal di tingkat institusi.</p>
+        
+        <div class="grid-2">
+            <div class="sub-box">
+                <h4>Co-Design dari Hari Pertama</h4>
+                <p>Pelibatan langsung staf KPAI & KPAD sejak tahap awal rancangan workflow untuk membangun rasa kepemilikan (institutional ownership).</p>
+            </div>
+            <div class="sub-box">
+                <h4>Iterative UAT</h4>
+                <p>Pengujian langsung aplikasi oleh pengguna lapangan dengan siklus penyempurnaan berbasis pengalaman nyata.</p>
+            </div>
+        </div>
+        <div class="sub-box" style="margin-top: 16px;">
+            <h4>Differentiated Capacity Building</h4>
+            <p>Simulasi praktis, pelatihan intensif berjenjang, penyediaan User Manual lengkap, serta dukungan Helpdesk teknis berkesinambungan.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; PT Aksa Digital Group — Mitra Transformasi Digital Terintegrasi</p>
+    </footer>
+</div>
+
+<script>
+    function showTab(index) {
+        const tabs = document.querySelectorAll('.content-card');
+        const buttons = document.querySelectorAll('.pill-btn');
+
+        tabs.forEach((tab, i) => {
+            tab.classList.toggle('active', i === index);
+        });
+
+        buttons.forEach((btn, i) => {
+            btn.classList.toggle('active', i === index);
+        });
+    }
+</script>
+
+</body>
+</html>
