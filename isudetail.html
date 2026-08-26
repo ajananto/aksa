@@ -1,0 +1,82 @@
+<div class="container my-4">
+  <!-- Header Control -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <a href="#" class="btn btn-outline-secondary btn-sm">&larr; Kembali ke Data Issue</a>
+    <div>
+      <span class="badge bg-danger">High Priority</span>
+      <span class="badge bg-success">Status: Resolved / Closed</span>
+    </div>
+  </div>
+
+  <!-- Main Card -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+      <h5 class="card-title mb-0">Issue #ISS-2026-0012: Kendala Konfirmasi Acceptance di Tender Award</h5>
+    </div>
+    <div class="card-body">
+      <!-- Metadata Grid -->
+      <div class="row mb-4">
+        <div class="col-md-3"><strong>Sistem:</strong> e-Procurement</div>
+        <div class="col-md-3"><strong>Kategori:</strong> Bugs (Tender)</div>
+        <div class="col-md-3"><strong>Pelapor:</strong> Sa'ban Junaid (Eksternal)</div>
+        <div class="col-md-3"><strong>Tanggal Diterima:</strong> 29/12/2025</div>
+      </div>
+
+      <hr>
+
+      <!-- Section 1: Email Request & Description -->
+      <div class="mb-4">
+        <h6 class="fw-bold text-dark">1. Email / Ticket Request Detail</h6>
+        <p class="text-muted">
+          <strong>Deskripsi Issue:</strong> Vendor melihat Tender Award tersebut di Page Tender History. Harusnya vendor akses masuk lewat Task To Do. Ketika dicek, ternyata Vendor sudah melakukan acceptance atas tender tersebut.
+        </p>
+        <div class="border rounded p-2 text-center bg-light">
+          <p class="text-muted small mb-1">Screenshot 1.1: Capture Email Request / Ticket User</p>
+          <img src="path/to/email-request-screenshot.png" class="img-fluid rounded border" alt="Screenshot Email Request">
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Section 2: Screenshot Penyelesaian (UI / Backend / Code) -->
+      <div>
+        <h6 class="fw-bold text-dark">2. Bukti Penyelesaian (Evidence Implementation)</h6>
+        <p class="text-muted">
+          <strong>Catatan Tim Technical (MIT):</strong> Done developer dan sudah dinaikkan ke Server Production. Tampilan UI dan logic backend telah disesuaikan.
+        </p>
+
+        <!-- Nav Tabs untuk Pilihan View Bukti -->
+        <ul class="nav nav-tabs id="evidenceTab" role="tablist">
+          <li class="nav-item">
+            <button class="nav-link active" id="ui-tab" data-bs-toggle="tab" data-bs-target="#ui-view">UI Interface (Frontend)</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" id="backend-tab" data-bs-toggle="tab" data-bs-target="#backend-view">Backend & Database Log</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" id="code-tab" data-bs-toggle="tab" data-bs-target="#code-view">Source Code / Git Commit</button>
+          </li>
+        </ul>
+
+        <div class="tab-content border border-top-0 rounded-bottom p-3 bg-light" id="evidenceTabContent">
+          <!-- Tab 1: UI -->
+          <div class="tab-pane fade show active text-center" id="ui-view">
+            <p class="text-muted small mb-2">Screenshot 2.1: Tampilan UI Setelah Perbaikan (Task To Do & Tender History)</p>
+            <img src="path/to/ui-resolution-screenshot.png" class="img-fluid rounded border mb-2" alt="UI Resolution Screenshot">
+          </div>
+          <!-- Tab 2: Backend -->
+          <div class="tab-pane fade text-center" id="backend-view">
+            <p class="text-muted small mb-2">Screenshot 2.2: Log Backend / Hasil Query Database</p>
+            <img src="path/to/backend-log-screenshot.png" class="img-fluid rounded border mb-2" alt="Backend Log Screenshot">
+          </div>
+          <!-- Tab 3: Code -->
+          <div class="tab-pane fade text-center" id="code-view">
+            <p class="text-muted small mb-2">Screenshot 2.3: Pull Request / Diff Changes pada Code Repository</p>
+            <img src="path/to/code-commit-screenshot.png" class="img-fluid rounded border mb-2" alt="Code Commit Screenshot">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
